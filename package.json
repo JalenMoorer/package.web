@@ -1,0 +1,25 @@
+{
+  "name": "JMS",
+  "version": "1.0.0",
+  "description": "Boilerplate for JMS projects",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.4",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --open",
+    "watch": "webpack --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=production"
+  },
+  "author": "Jalen Moorer",
+  "license": "ISC"
+}

@@ -1,5 +1,23 @@
-import App from './App';
+import saveAs from 'file-saver';
 
-const foo = App();
+const packages = [
+  'package1',
+  'package2',
+  'package3'
+]
 
-console.log(foo);
+function createPackageJSON(packages) {
+  const filename = 'package.json';
+  const content = packages.join(',\r\n');
+
+  console.log(content);
+
+  const blob = new Blob([content], {
+    type: "text/plain;charset=utf-8"
+  });
+
+  saveAs(blob);
+
+}
+
+createPackageJSON(packages)

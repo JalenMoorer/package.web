@@ -1,23 +1,28 @@
-import saveAs from 'file-saver';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-const packages = [
-  'package1',
-  'package2',
-  'package3'
-]
+import App from './App';
 
-function createPackageJSON(packages) {
-  const filename = 'package.json';
-  const content = packages.join(',\r\n');
+import { createStore, applyMiddleware, compose } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import { Provider } from 'react-redux';
 
-  console.log(content);
+//import Reducers from './Reducers';
+//import { watcherSaga } from './Sagas/sagas';
 
-  const blob = new Blob([content], {
-    type: "text/plain;charset=utf-8"
-  });
+//const sagaMiddleware = createSagaMiddleware();
 
-  saveAs(blob);
+const reduxDevTools =
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
-}
+// let store = createStore(
+//   Reducers,
+//   compose(applyMiddleware(sagaMidleware), reduxDevTools)
+// );
 
-createPackageJSON(packages)
+//sagaMiddleware.run(watcherSaga);
+
+ReactDOM.render(
+    <App />,
+  document.getElementById('root')
+);
